@@ -39,10 +39,10 @@ function renderUI(data) {
             <td>${product.desc}</td>
             <td>
                 <div class="d-flex">
-                    <button class="btn btn-info mr-3" data-toggle="modal" 
+                    <button style="cursor: pointer;" class="btn btn-info mr-3" data-toggle="modal" 
                     data-target="#myModal" onclick="editProduct(${product.id
       })">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteProduct(${product.id
+                    <button style="cursor: pointer;" class="btn btn-danger" onclick="deleteProduct(${product.id
       })">Delete</button>
                 </div>   
             </td>
@@ -118,7 +118,7 @@ getEle("btnThemSP").onclick = function () {
   document.getElementsByClassName("modal-title")[0].innerHTML = "Add Product";
 
   //tạo nút "Add" => gắn vào footer của modal
-  var btnAdd = `<button class="btn btn-success" onclick="addProduct()">Add</button>`;
+  var btnAdd = `<button style="cursor: pointer;" class="btn btn-success" onclick="addProduct()">Add</button>`;
   document.getElementsByClassName("modal-footer")[0].innerHTML = btnAdd;
 };
 
@@ -159,7 +159,7 @@ function editProduct(id) {
   document.getElementsByClassName("modal-title")[0].innerHTML = "Edit Product";
 
   //tạo nút "Update" => gắn vào footer của modal
-  var btnUpdate = `<button class="btn btn-success" onclick="updateProduct(${id})">Update</button>`;
+  var btnUpdate = `<button style="cursor: pointer;" class="btn btn-success" onclick="updateProduct(${id})">Update</button>`;
   document.getElementsByClassName("modal-footer")[0].innerHTML = btnUpdate;
 
   //lấy thông tin chi tiết của product dựa vào id
