@@ -33,7 +33,7 @@ function renderUI(data) {
             <td>${product.frontCamera}</td>
             <td>${product.backCamera}</td>
             <td>
-                <img width="50" src="./../assets/img/${product.img}" />
+                <img width="50" src="./app/img/${product.img}" />
             </td>
             <td>${product.type}</td>
             <td>${product.desc}</td>
@@ -41,9 +41,9 @@ function renderUI(data) {
                 <div class="d-flex">
                     <button class="btn btn-info mr-3" data-toggle="modal" 
                     data-target="#myModal" onclick="editProduct(${product.id
-                    })">Edit</button>
+      })">Edit</button>
                     <button class="btn btn-danger" onclick="deleteProduct(${product.id
-                    })">Delete</button>
+      })">Delete</button>
                 </div>   
             </td>
         </tr>
@@ -51,11 +51,11 @@ function renderUI(data) {
   }
 
   getEle("tblDanhSachSP").innerHTML = content;
-  getEle("SapXepTang").onclick = function() {
-      filterByPrice(data, "tang")
+  getEle("SapXepTang").onclick = function () {
+    filterByPrice(data, "tang")
   };
-  getEle("SapXepGiam").onclick = function() {
-      filterByPrice(data, "giam")
+  getEle("SapXepGiam").onclick = function () {
+    filterByPrice(data, "giam")
   };
 }
 
@@ -74,42 +74,42 @@ function deleteProduct(id) {
 }
 
 function callDataProductInput(id = "") {
-    var tenSP = getEle("tenSP").value;
-    var giaSP = getEle("giaSP").value;
-    var screen = getEle("screen").value;
-    var frontCamera = getEle("frontCamera").value;
-    var backCamera = getEle("backCamera").value;
-    var hinhSP = getEle("hinhSP").value;
-    var type = getEle("type").value;
-    var moTa = getEle("moTa").value;
+  var tenSP = getEle("tenSP").value;
+  var giaSP = getEle("giaSP").value;
+  var screen = getEle("screen").value;
+  var frontCamera = getEle("frontCamera").value;
+  var backCamera = getEle("backCamera").value;
+  var hinhSP = getEle("hinhSP").value;
+  var type = getEle("type").value;
+  var moTa = getEle("moTa").value;
 
-    //Check Validate
-    //Check field bắt buộc, min - max (nếu cần), kiểm tra số (nếu cần)
-    var isValid = true;
-    isValid &= kiemTraRong(tenSP, 'spanTenSP', 'Đây là field bắt buộc') &&
-                kiemTraDoDaiKyTu(tenSP, "", 100, 'spanTenSP', 'Vui lòng nhập từ 1 đến 100 ký tự') &&
-                kiemTraSo(giaSP, 'spanGiaSP', 'Vui lòng nhập số');
-    isValid &= kiemTraRong(giaSP, 'spanGiaSP', 'Đây là field bắt buộc') &&
-                kiemTraDoDaiKyTu(giaSP, "", 10, 'spanGiaSP', 'Vui lòng nhập từ 1 đến 10 ký tự');
-    isValid &= kiemTraRong(screen, 'spanScreen', 'Đây là field bắt buộc') &&
-                kiemTraDoDaiKyTu(screen, "", 100, 'spanScreen', 'Vui lòng nhập từ 1 đến 200 ký tự');
-    isValid &= kiemTraRong(frontCamera, 'spanFrontCamera', 'Đây là field bắt buộc') &&
-                kiemTraDoDaiKyTu(frontCamera, "", 100, 'spanFrontCamera', 'Vui lòng nhập từ 1 đến 200 ký tự');
-    isValid &= kiemTraRong(backCamera, 'spanBackCamera', 'Đây là field bắt buộc') &&
-                kiemTraDoDaiKyTu(backCamera, "", 100, 'spanBackCamera', 'Vui lòng nhập từ 1 đến 200 ký tự');
-    isValid &= kiemTraRong(hinhSP, 'spanHinhSP', 'Đây là field bắt buộc') &&
-                kiemTraDoDaiKyTu(hinhSP, "", 100, 'spanHinhSP', 'Vui lòng nhập từ 1 đến 200 ký tự');
-    isValid &= kiemTraRong(type, 'spanType', 'Đây là field bắt buộc');
-    isValid &= kiemTraRong(moTa, 'spanMoTa', 'Đây là field bắt buộc') &&
-                kiemTraDoDaiKyTu(moTa, "", 100, 'spanMoTa', 'Vui lòng nhập từ 1 đến 200 ký tự');
+  //Check Validate
+  //Check field bắt buộc, min - max (nếu cần), kiểm tra số (nếu cần)
+  var isValid = true;
+  isValid &= kiemTraRong(tenSP, 'spanTenSP', 'Đây là field bắt buộc') &&
+    kiemTraDoDaiKyTu(tenSP, "", 100, 'spanTenSP', 'Vui lòng nhập từ 1 đến 100 ký tự') &&
+    kiemTraSo(giaSP, 'spanGiaSP', 'Vui lòng nhập số');
+  isValid &= kiemTraRong(giaSP, 'spanGiaSP', 'Đây là field bắt buộc') &&
+    kiemTraDoDaiKyTu(giaSP, "", 10, 'spanGiaSP', 'Vui lòng nhập từ 1 đến 10 ký tự');
+  isValid &= kiemTraRong(screen, 'spanScreen', 'Đây là field bắt buộc') &&
+    kiemTraDoDaiKyTu(screen, "", 100, 'spanScreen', 'Vui lòng nhập từ 1 đến 200 ký tự');
+  isValid &= kiemTraRong(frontCamera, 'spanFrontCamera', 'Đây là field bắt buộc') &&
+    kiemTraDoDaiKyTu(frontCamera, "", 100, 'spanFrontCamera', 'Vui lòng nhập từ 1 đến 200 ký tự');
+  isValid &= kiemTraRong(backCamera, 'spanBackCamera', 'Đây là field bắt buộc') &&
+    kiemTraDoDaiKyTu(backCamera, "", 100, 'spanBackCamera', 'Vui lòng nhập từ 1 đến 200 ký tự');
+  isValid &= kiemTraRong(hinhSP, 'spanHinhSP', 'Đây là field bắt buộc') &&
+    kiemTraDoDaiKyTu(hinhSP, "", 100, 'spanHinhSP', 'Vui lòng nhập từ 1 đến 200 ký tự');
+  isValid &= kiemTraRong(type, 'spanType', 'Đây là field bắt buộc');
+  isValid &= kiemTraRong(moTa, 'spanMoTa', 'Đây là field bắt buộc') &&
+    kiemTraDoDaiKyTu(moTa, "", 100, 'spanMoTa', 'Vui lòng nhập từ 1 đến 200 ký tự');
 
-    console.log(isValid);
-    if (isValid === 0) {
-        return null;
-    }
-    else {
-        return new Product(id, tenSP, giaSP, screen, frontCamera, backCamera, hinhSP, type, moTa);
-    }
+  console.log(isValid);
+  if (isValid === 0) {
+    return null;
+  }
+  else {
+    return new Product(id, tenSP, giaSP, screen, frontCamera, backCamera, hinhSP, type, moTa);
+  }
 }
 
 //Chỉnh UI Modal Add Product
@@ -126,7 +126,7 @@ getEle("btnThemSP").onclick = function () {
 function addProduct() {
   var product = callDataProductInput();
   if (!product) {
-      return null;
+    return null;
   }
   var promise = api.addProductApi(product);
 
@@ -188,7 +188,7 @@ function editProduct(id) {
 function updateProduct(id) {
   var product = callDataProductInput(id);
   if (!product) {
-      return null;
+    return null;
   }
   api
     .updateProductApi(product)
@@ -211,15 +211,15 @@ function findStaffByName() {
   var promise = api.fetchData();
   promise
     .then(function (result) {
-        var products = result.data;
-        var filterProducts = [];
-        for (var i = 0; i < products.length; i++){
-            var productName = products[i].name.toLowerCase();
-            if (productName.indexOf(targetName) >= 0){
-                filterProducts.push(products[i])
-            }
+      var products = result.data;
+      var filterProducts = [];
+      for (var i = 0; i < products.length; i++) {
+        var productName = products[i].name.toLowerCase();
+        if (productName.indexOf(targetName) >= 0) {
+          filterProducts.push(products[i])
         }
-        renderUI(filterProducts);
+      }
+      renderUI(filterProducts);
     })
     .catch(function (error) {
       console.log(error);
@@ -227,29 +227,29 @@ function findStaffByName() {
 }
 
 function filterByPrice(data, order) {
-    if (order.indexOf("tang")) {
-        // Hoán vị để có dãy list sản phẩm tăng dần theo giá
-        for (var i = 0; i < data.length - 1; i++) {
-            for (var j = i + 1; j < data.length; j++) {
-                if (Number(data[i].price) < Number(data[j].price)) {
-                    var temp = data[i];
-                    data[i] = data[j];
-                    data[j] = temp;
-                }
-            }
+  if (order.indexOf("tang")) {
+    // Hoán vị để có dãy list sản phẩm tăng dần theo giá
+    for (var i = 0; i < data.length - 1; i++) {
+      for (var j = i + 1; j < data.length; j++) {
+        if (Number(data[i].price) < Number(data[j].price)) {
+          var temp = data[i];
+          data[i] = data[j];
+          data[j] = temp;
         }
-    } else if (order.indexOf("giam")) {
-        // Hoán vị để có dãy list sản phẩm giảm dần theo giá
-        for (var i = 0; i < data.length - 1; i++) {
-            for (var j = i + 1; j < data.length; j++) {
-                if (Number(data[i].price) > Number(data[j].price)) {
-                    var temp = data[i];
-                    data[i] = data[j];
-                    data[j] = temp;
-                }
-            }
-        }
+      }
     }
+  } else if (order.indexOf("giam")) {
+    // Hoán vị để có dãy list sản phẩm giảm dần theo giá
+    for (var i = 0; i < data.length - 1; i++) {
+      for (var j = i + 1; j < data.length; j++) {
+        if (Number(data[i].price) > Number(data[j].price)) {
+          var temp = data[i];
+          data[i] = data[j];
+          data[j] = temp;
+        }
+      }
+    }
+  }
 
-    return renderUI(data);
+  return renderUI(data);
 }
