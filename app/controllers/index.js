@@ -197,6 +197,15 @@ function updateProduct(id) {
       //close modal
       document.getElementsByClassName("close")[0].click();
       getListProduct();
+      //Xóa đi dữ liệu đang hiển thị khỏi modal, để hiện rỗng ở lần Add tiếp theo
+      getEle("tenSP").value = "";
+      getEle("giaSP").value = "";
+      getEle("screen").value = "";
+      getEle("frontCamera").value = "";
+      getEle("backCamera").value = "";
+      getEle("hinhSP").value = "";
+      getEle("type").value = "";
+      getEle("moTa").value = "";
     })
     .catch(function (error) {
       console.log(error);
